@@ -1,0 +1,109 @@
+<h1>Template Driven Form</h1>
+<div class="row">
+  <div class="col-6 offset-3 d-flex justify-content-center">
+    <div [hidden]="submitted">
+      <h1>Device Form</h1>
+      <form #deviceForm="ngForm">
+
+        <div class="form-group">
+          <label for="deviceModel">Model</label>
+          <input type="text" class="form-control" id="deviceModel"
+                 required
+                 [(ngModel)]="device.label" name="deviceModel"
+                 #deviceModel="ngModel">
+          <div [hidden]="deviceModel.valid || deviceModel.pristine"
+               class="alert alert-danger">
+            Model is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="memory">Memory</label>
+          <input type="text" class="form-control" id="memory"
+                 required
+                 [(ngModel)]="device.memory" name="memory"
+                 #memory="ngModel">
+          <div [hidden]="memory.valid || memory.pristine"
+               class="alert alert-danger">
+            Model is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" class="form-control" id="price"
+                 [(ngModel)]="device.price" name="price"
+                 #price="ngModel">
+          <div [hidden]="price.valid || price.pristine"
+               class="alert alert-danger">
+            price is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span *ngFor="let x of rate" style="margin-right:.875em;">
+            <input type="radio"
+                   id="{{x}}"
+                   value="{{x}}"
+                   name="rate"
+                   [(ngModel)]="selectedRadio"
+                  [checked]="selectedRadio == x">
+            <label for="{{x}}"> {{x}} </label>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="os">OS Power</label>
+          <select class="form-control" id="os"
+                  required
+                  [(ngModel)]="device.os" name="os"
+                  #os="ngModel">
+            <option *ngFor="let pow of listOS" [value]="pow" [selected]="(device.os | lowercase) == (pow | lowercase) ">{{pow}}</option>
+          </select>
+          <div [hidden]="os.valid || os.pristine" class="alert alert-danger">
+            OS is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descrizione</label>
+          <textarea class="form-control" id="description"
+                 required
+                 [(ngModel)]="device.desc" name="description"
+                    #description="ngModel">{{device.desc}}</textarea>
+          <div [hidden]="description.valid || description.pristine"
+               class="alert alert-danger">
+            Descrizione is required
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" (click)="logForm(deviceForm)">Submit</button>
+        <button type="button" class="btn btn-info" (click)="newDevice() && deviceForm.reset()">Reset Form</button>
+        <button type="button" class="btn btn-danger" (click)="add(deviceForm)">New Hero</button>
+        <!-- NOT SHOWN IN DOCS -->
+        <div>
+          <hr>
+          Name via form.controls = {{showFormControls(deviceForm)}}
+        </div>
+        <!-- - -->
+      </form>
+
+      <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+          <div class="col-xs-3">Name</div>
+          <div class="col-xs-9">{{ device.label }}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3">Alter Ego</div>
+          <div class="col-xs-9">{{ device.price }}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3">Power</div>
+          <div class="col-xs-9">{{ device.os }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+      </div>
+    </div>
+  </div>

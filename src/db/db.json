@@ -1,0 +1,101 @@
+{
+  "devices": [
+    {
+      "label": "One Plus 8",
+      "os": "android",
+      "price": 800,
+      "rate": 3,
+      "memory": 7400,
+      "desc": "One Plus 5 is a flagship phone...",
+      "id": 1
+    },
+    {
+      "label": "IPhone 7 +",
+      "os": "ios",
+      "price": 700,
+      "rate": 7,
+      "memory": 3000,
+      "id": 2,
+      "desc": "Erlon Desc Xiaomi"
+    },
+    {
+      "label": "Samsung S8",
+      "os": "android",
+      "price": 600,
+      "rate": 3,
+      "memory": 64000,
+      "id": 3,
+      "desc": "Erlon Desc Xiaomi"
+    },
+    {
+      "label": "IPhone Xr",
+      "price": 899,
+      "os": "ios",
+      "id": 4,
+      "rate": 4,
+      "desc": "Erlon Desc Xiaomi"
+    },
+    {
+      "label": "Xiaomi Mi Note 3",
+      "price": 260,
+      "os": "android",
+      "id": 5,
+      "rate": 5,
+      "desc": "Erlon Desc Xiaomi"
+    },
+    {
+      "label": "Pocophone F1",
+      "os": "Symbian",
+      "price": "350",
+      "rate": 6,
+      "id": 6,
+      "desc": "Erlon Desc Xiaomi"
+    },
+    {
+      "label": "One Plus 8",
+      "os": "android",
+      "price": 800,
+      "rate": "6",
+      "id": 7
+    },
+    {
+      "label": "IPhone Xr",
+      "os": "ios",
+      "price": 899,
+      "rate": 4,
+      "desc": "Erlon Desc Xiaomi",
+      "id": 8
+    }
+  ],
+  "categorie": [
+    {
+      "id": 0,
+      "descrizione": "mare"
+    },
+    {
+      "id": 1,
+      "descrizione": "pallone"
+    },
+    {
+      "descrizione": "defwretry",
+      "id": 2
+    }
+  ],
+  "argomenti": [
+    {
+      "id": 0,
+      "descrizione": "mare"
+    },
+    {
+      "id": 1,
+      "descrizione": "pallone"
+    },
+    {
+      "descrizione": "waefrgtf",
+      "id": 2
+    }
+  ],
+  "login": {
+    "token": "efoiwejo32r32-fake-token"
+  }
+}
